@@ -1,3 +1,8 @@
+body {
+  max-width: 960px;
+  min-width: 500px;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -8,12 +13,26 @@ cite {
   display: block;
   margin-top: 10px;
 }
+#external-links {
+  display: inline-block;
+  width: 20%;
+
+}
+h1 {
+  /*content: 'why';*/
+  margin-top: 5px;
+}
 
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+  /*vertical-align: text-top;*/
 }
-
+main {
+  display: inline-block;
+  width: 75%;
+  vertical-align: top;
+}
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
 but it's optional! */
@@ -29,4 +48,39 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: pink;
+  }
+
+  h1#external-header {
+    font-size: 1em;
+    margin: 0 auto;
+
+    /*text-align: center;*/  
+  }
+  #external-links {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+
+   #navbar ul {
+    float: left;
+    display: inline-block;
+    text-align: center;
+    margin-left:25%;
+   }
+
+ 
+}
+@media screen and (min-width: 501px) and (max-width: 900px) {
+  body {
+    background-color: yellow;
+  }
+
+
 }
