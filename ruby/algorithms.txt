@@ -1,0 +1,45 @@
+#Robot Pseuodocode
+
+-Wait until a floor button is pressed
+-Once pressed,
+	-Determine what floor the button was pressed on
+	-Determine what floor the elevator is on
+	-Calculate the differnce and move up/down x number of floors
+	-Open door
+
+-Wait for passenger to press buttons
+	-Determine direction up or down
+		-If at floor 1, must go up
+		-If at top floor, must go down
+
+	-Count number of buttons pressed in current direction
+	-Sort these numbers and stop at each along the way, in order.
+
+-If no input once all floors that have been pressed are reached, close doorfs and wait for input.
+
+
+#Real Life Algorithm
+##Morning Routine
+
+-Wake up at sound of alarm
+-Smell self and if smell bad, turn on water to take shwoer. If smell ok, proceed to bathroom  Post Shower. 
+	-Shower
+		-Turn on water and wait until warm
+		-Hop in and rinse off
+		-Shampoo hair and rinse off
+		-Use soap or body wash all over and rinse off
+		-Turn water off
+		-Towel dry
+	-Post Shower
+		-Comb hair
+		-Brush teeth
+		-Return to bedroom
+
+	-Getting dressed
+		-Once in bedroom, put on underwear and socks.
+		-Put on deoderant
+		-Pick pants. Put on pants
+		-Pick shirt based off of pants color. Put on shirt
+		-Put on and tie shoes
+
+	-Congratulate yourself on another successful morning routine!
