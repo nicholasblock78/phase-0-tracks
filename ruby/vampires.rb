@@ -13,11 +13,19 @@ until users == 0
 	puts "Would you like to enroll in the company health insurance? (y/n)"
 	insurance = gets.chomp.upcase
 
+	puts "Name your allergies:"
+	puts "Type 'done' when finished"
+	allergies = gets.chomp
+	until allergies == "done" || allergies == "sunshine"
+		allergies = gets.chomp
+	end
 	check_age = 2016 - age - birth_year
 	
 
  if name == "Drake Cula" || name == "Tu Fang"
 			puts "Definitely a vampire."
+		elsif allergies == "sunshine"
+			puts "Probably a vampire"
 		elsif (check_age != 0 && garlic_bread == "N" && insurance == "N")
 			puts "Almost certainly a vampire."
 		elsif (check_age != 0 && (garlic_bread == "N" || insurance == "N"))
@@ -37,4 +45,5 @@ users += -1
 end
 
 puts "Thanks for entering in the new employees!"
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
