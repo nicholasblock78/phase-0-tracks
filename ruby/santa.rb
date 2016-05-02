@@ -14,7 +14,13 @@ class Santa
 		p "That was a good #{type} cookie!"
 	end
 end
-
-checker = Santa.new('gender','ethnicity')
+santa = []
+genders = ['male', 'female', 'transgender']
+ethnicities = ['caucasian', 'asian', 'african american']
+ genders.length.times do |i|
+ 	santa = Santa.new(gender[i], ethnicities[i])
+ 	p santa
+ end
+checker = Santa.new(gender,ethnicity)
 checker.speak
 checker.eat_milk_and_cookies('snickerdoodle')
