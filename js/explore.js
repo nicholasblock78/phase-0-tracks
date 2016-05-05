@@ -13,18 +13,22 @@
 
 function reverse(string) {
   // To take each character and save into an array
-  var str_arr = []
+  var str_arr = new Array
   for (var i=0, len = string.length; i < len; i++) {
     // var str_arr = []
     str_arr.push(string[i]);
   }
-  // Take from array and add index one by one w loop
-  // for (var i=-1; len1 = str_arr.length ; i--) {
-  //    var reversed_string = str_arr[i] + str_arr[i-1]
-  //
-  // }
-
-  return str_arr
+  //now to reverse this array manually
+  var reversed_array = new Array;
+    for (var i = str_arr.length-1; i >= 0; i--) {
+    reversed_array.push(str_arr[i])
+  }
+  //add the array back together into a string
+  var reversed_string = '';
+  for (var i=0, len = string.length; i < len; i++) {
+    reversed_string += reversed_array[i];
+  }
+  return reversed_string;
 }
 // function reverse(string) {
 //   var split_string = string.split('');
