@@ -8,6 +8,8 @@
 //split string into an array, then reverse array, then join back together into a string
 //Declaring the function
 
+//loop thru each char and save to array in backwords fashion -1, -2, -3 etc
+//then add index to index in reverse order '[-1]' + '[-2]'
 function reverse(string) {
   var split_string = string.split('');
   var reversed_array = split_string.reverse();
