@@ -1,0 +1,96 @@
+Release 2
+1.
+sqlite> SELECT students.name, students.lunch_period, ice_creams.name
+   ...> FROM students
+   ...> INNER JOIN ice_creams
+   ...> ON students.ice_cream_id = ice_creams.id;
+Little Jimmy|5|Mint Chocolate Chip
+Baby Bella|4|Chocolate
+Sleepy Susan|4|Vanilla
+Squeakish Sam|6|Cookie Dough
+
+2.
+sqlite> UPDATE students
+   ...> SET ice_cream_id = 1
+   ...> WHERE name = "Little Jimmy";
+sqlite> SELECT * FROM students;
+1|Little Jimmy|5|1
+2|Baby Bella|4|2
+3|Sleepy Susan|4|1
+4|Squeakish Sam|6|4
+
+3.
+sqlite> SELECT * FROM students, ice_creams;
+1|Little Jimmy|5|1|1|Vanilla
+1|Little Jimmy|5|1|2|Chocolate
+1|Little Jimmy|5|1|3|Mint Chocolate Chip
+1|Little Jimmy|5|1|4|Cookie Dough
+2|Baby Bella|4|2|1|Vanilla
+2|Baby Bella|4|2|2|Chocolate
+2|Baby Bella|4|2|3|Mint Chocolate Chip
+2|Baby Bella|4|2|4|Cookie Dough
+3|Sleepy Susan|4|1|1|Vanilla
+3|Sleepy Susan|4|1|2|Chocolate
+3|Sleepy Susan|4|1|3|Mint Chocolate Chip
+3|Sleepy Susan|4|1|4|Cookie Dough
+4|Squeakish Sam|6|4|1|Vanilla
+4|Squeakish Sam|6|4|2|Chocolate
+4|Squeakish Sam|6|4|3|Mint Chocolate Chip
+4|Squeakish Sam|6|4|4|Cookie Dough
+
+4.
+sqlite> SELECT students.name, ice_creams.name FROM students, ice_creams;
+Little Jimmy|Vanilla
+Little Jimmy|Chocolate
+Little Jimmy|Mint Chocolate Chip
+Little Jimmy|Cookie Dough
+Baby Bella|Vanilla
+Baby Bella|Chocolate
+Baby Bella|Mint Chocolate Chip
+Baby Bella|Cookie Dough
+Sleepy Susan|Vanilla
+Sleepy Susan|Chocolate
+Sleepy Susan|Mint Chocolate Chip
+Sleepy Susan|Cookie Dough
+Squeakish Sam|Vanilla
+Squeakish Sam|Chocolate
+Squeakish Sam|Mint Chocolate Chip
+Squeakish Sam|Cookie Dough
+
+5.
+sqlite> DELETE FROM students
+   ...> WHERE name="Baby Bella";
+sqlite> SELECT * FROM students;
+1|Little Jimmy|5|1
+3|Sleepy Susan|4|1
+4|Squeakish Sam|6|4
+
+Release 3
+1.
+The different kinds of joins are: Inner Join, Left Outer Join, Right Outer Join, Full Outer Join, Cross Join, Self Join. The most common join is the Inner join
+because it will only display results that have actual data to display. The outer joins can show data that hasn't been defined and will return 'null' which can be visually unpleasing and distracting.
+There is the same basic SQL Joins template out there (https://www.google.com/imgres?imgurl=http://www.codeproject.com/KB/database/Visual_SQL_Joins/Visual_SQL_JOINS_orig.jpg&imgrefurl=https://www.youtube.com/watch%3Fv%3DKTvYHEntvn8&h=760&w=966&tbnid=SXGHjyoV2uc_DM:&tbnh=160&tbnw=203&docid=BpV-LGmBfltuYM&itg=1&usg=__UeLSwnlc2WZaOf_BON923GMqFC8=&sa=X&ved=0ahUKEwij5-LBxOTMAhXL3YMKHcCkAlIQ9QEIIjAA)
+2.
+sqlite> SELECT students.name, students.lunch_period, students.ice_cream_id, ice_creams.name
+   ...> FROM students
+   ...> CROSS JOIN ice_creams;
+Little Jimmy|5|1|Vanilla
+Little Jimmy|5|1|Chocolate
+Little Jimmy|5|1|Mint Chocolate Chip
+Little Jimmy|5|1|Cookie Dough
+Sleepy Susan|4|1|Vanilla
+Sleepy Susan|4|1|Chocolate
+Sleepy Susan|4|1|Mint Chocolate Chip
+Sleepy Susan|4|1|Cookie Dough
+Squeakish Sam|6|4|Vanilla
+Squeakish Sam|6|4|Chocolate
+Squeakish Sam|6|4|Mint Chocolate Chip
+Squeakish Sam|6|4|Cookie Dough
+
+sqlite> SELECT students.name, students.lunch_period, students.ice_cream_id, ice_creams.name
+   ...> FROM students
+   ...> INNER JOIN ice_creams
+   ...> ON ice_cream_id = ice_creams.id;
+Little Jimmy|5|1|Vanilla
+Sleepy Susan|4|1|Vanilla
+Squeakish Sam|6|4|Cookie Dough
